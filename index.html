@@ -5,13 +5,90 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Dice Rolling Game</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwindcss -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="flex flex-col justify-center items-center">
+  <div id="gameContainerDiv"
+    class="container flex flex-col justify-center items-center w-11/12 h-5/6 bg-white py-28 pt-14 pb-28">
+    <!-- Start Game -->
+    <div id="startGameDiv">
+      <button class="border-none outline-none">
+        <i class="fa-regular fa-circle-plus"></i>
+        NEW GAME
+      </button>
+    </div>
+    <!-- Game Row-->
+    <div id="gameRowDiv">
+      <!-- Player -->
+      <div class="player-wrapper">
+        <div class="player1">
+          <div class="player-name">
+            <h2>PLAYER 1</h2>
+          </div>
+          <div class="player-score">
+            <h2>0</h2>
+          </div>
+        </div>
+      </div>
+      <!-- Dice -->
+      <div class="dice-wrapper">
+        <img src="/images/dice-01.svg" alt="face dé" id="face">
+      </div>
+      <!-- Player -->
+      <div class="player-wrapper">
+        <div class="player2">
+          <div class="player-name">
+            <h2>PLAYER 2</h2>
+          </div>
+          <div class="player-score">
+            <h2>0</h2>
+          </div>
+        </div>
+      </div>
 
+    </div>
+
+    <!-- Score row -->
+    <div id="scoreRowDiv">
+      <!-- Score player 1 -->
+      <div class="global-player">
+        <h4>CURRENT</h4>
+        <span class="current1">0</span>
+      </div>
+      <!-- Options of the game -->
+      <div id="action-wrapper">
+        <button id="refresh" class="border-none outline-none">
+          <i class="fa-light fa-arrows-rotate"></i>
+          ROLL DICE
+        </button>
+        <button id="download" class="border-none outline-none">
+          <i class="fa-regular fa-arrow-down-to-square"></i>
+          HOLD
+        </button>
+      </div>
+      <!-- Score player 2 -->
+      <div class="global-player">
+        <h4>CURRENT</h4>
+        <span class="current2">0</span>
+      </div>
+    </div>
+  </div>
 
 
   <!-- JS -->

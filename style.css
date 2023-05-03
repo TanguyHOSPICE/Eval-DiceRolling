@@ -167,6 +167,22 @@ img {
 	align-content: space-between; /*TODO: A vérif*/
 }
 
+/**** ---Animation Shake---  ****/
+.shake {
+	animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(8deg);
+	}
+	50% {
+		transform: rotate(-8deg);
+	}
+	100% {
+		transform: rotate(8deg);
+	}
+}
 /**** ---Media Queries---  ****/
 @media screen and (max-height: 900px) {
 	#gameContainerDiv {

@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Tailwindcss -->
@@ -37,27 +37,33 @@
     <div id="gameRowDiv">
       <!-- Player -->
       <div class="player-wrapper">
-        <div class="player1">
-          <div class="player-name">
+        <div class="player p1">
+          <!--  TODO #active: Injection JS : active-->
+          <div class="player-name active">
             <h2>PLAYER 1</h2>
+            <div class="tour"></div>
+            <!--  TODO #active: FIN Injection -->
           </div>
-          <div class="player-score">
-            <h2>0</h2>
+          <div class="global g1">
+            <span>43</span>
           </div>
         </div>
       </div>
       <!-- Dice -->
       <div class="dice-wrapper">
-        <img src="/images/dice-01.svg" alt="face dé" id="face">
+        <img src="/images/dice-06.svg" alt="face dé" id="face">
       </div>
       <!-- Player -->
       <div class="player-wrapper">
-        <div class="player2">
+        <div class="player p2">
+          <!--  TODO #active: Injection JS : active -->
           <div class="player-name">
             <h2>PLAYER 2</h2>
+            <div class="tour"></div>
+            <!--  TODO #active: FIN Injection -->
           </div>
-          <div class="player-score">
-            <h2>0</h2>
+          <div class="global g2">
+            <span>72</span>
           </div>
         </div>
       </div>
@@ -67,25 +73,29 @@
     <!-- Score row -->
     <div id="scoreRowDiv">
       <!-- Score player 1 -->
-      <div class="global-player">
+      <!-- TODO #active: Injection JS : active-->
+      <div class="round-player active">
+        <!--  TODO #active: FIN Injection -->
         <h4>CURRENT</h4>
-        <span class="current1">0</span>
+        <span class="round r1">0</span>
       </div>
       <!-- Options of the game -->
       <div id="action-wrapper">
         <button id="refresh" class="border-none outline-none">
-          <i class="fa-light fa-arrows-rotate"></i>
+          <i class="fa-regular fa-arrows-rotate"></i>
           ROLL DICE
         </button>
         <button id="download" class="border-none outline-none">
-          <i class="fa-regular fa-arrow-down-to-square"></i>
+          <i class="fa-light fa-arrow-down-to-square"></i>
           HOLD
         </button>
       </div>
       <!-- Score player 2 -->
-      <div class="global-player">
+      <!--  TODO #active: Injection JS : active-->
+      <div class="round-player">
+        <!--  TODO #active: FIN Injection -->
         <h4>CURRENT</h4>
-        <span class="current2">0</span>
+        <span class="round r2">0</span>
       </div>
     </div>
   </div>

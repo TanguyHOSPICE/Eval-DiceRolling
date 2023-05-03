@@ -13,9 +13,29 @@ body {
 	color: grey;
 }
 
+button {
+	cursor: pointer;
+	width: 150px;
+	padding: 10px;
+	border-radius: 5px;
+	text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.473);
+	letter-spacing: 1px;
+}
+
 i {
-	color: red;
-	font-size: 20px;
+	color: #d01616;
+	font-size: 1.25rem;
+	margin-right: 10px;
+}
+
+#gameContainerDiv {
+	height: 90vh;
+	width: 90vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: space-around;
+	background-color: #f4f2f2;
 }
 /**** ---Bloc Start game---  ****/
 #startGameDiv {
@@ -27,37 +47,91 @@ i {
 	align-items: flex-start;
 }
 
-#startGameDiv button {
-}
-
-/**** ---Bloc Game row---  ****/
+/**** ---Bloc Game row (GLOBAL)---  ****/
 #gameRowDiv {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-grow: 2;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
+	margin: 40px 0;
 }
 
 .player-wrapper {
+	height: 500px;
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	border-radius: 5px;
 }
-/**** ---Bloc Score row---  ****/
+
+.player-wrapper:has(.player-name.active) {
+	box-shadow: 4px 4px 5px #bebebe;
+}
+
+.player-wrapper:not(:has(.player-name.active)) {
+	opacity: 0.5;
+}
+
+.player-name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.88rem;
+	font-weight: 100;
+	letter-spacing: 2px;
+}
+
+.player-name.active,
+.player-name.active + .global {
+	font-weight: 400;
+	text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.473);
+}
+
+.player-name.active .tour {
+	height: 15px;
+	width: 15px;
+	margin-left: 10px;
+	border-radius: 15px;
+	background-color: red;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.319);
+}
+
+.global {
+	font-size: 5rem;
+	font-weight: 100;
+	color: red;
+}
+
+.dice-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 20px;
+}
+
+img {
+	height: 100px;
+	width: 100px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+/**** ---Bloc Score row (ROUND)---  ****/
 #scoreRowDiv {
-	height: 100%;
-	width: 100%;
+	height: 150px;
+	width: 80%;
 	display: flex;
 	flex-shrink: 1;
 	justify-content: space-around;
 	align-items: center;
 }
 
-.global-player {
+.round-player {
 	width: 110px;
 	height: 80px;
 	display: flex;
@@ -67,14 +141,22 @@ i {
 	background-color: red;
 }
 
-.global-player h4 {
+.round-player.active {
+	box-shadow: 4px 4px 5px #bebebe;
+}
+
+.round-player:not(.active) {
+	opacity: 0.5;
+}
+
+.round-player h4 {
 	color: black;
 	font-weight: 300;
 }
 
-.global-player span {
+.round-player span {
 	color: white;
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 #action-wrapper {
@@ -83,4 +165,74 @@ i {
 	justify-content: center;
 	align-items: center;
 	align-content: space-between; /*TODO: A vérif*/
+}
+
+/**** ---Media Queries---  ****/
+@media screen and (max-height: 900px) {
+	#gameContainerDiv {
+		padding: 10px 5px;
+	}
+	/**** ---Bloc Game row (GLOBAL)---  ****/
+	.player-wrapper {
+		height: 80%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	/**** ---Bloc Game row (GLOBAL)---  ****/
+	#gameRowDiv .player-wrapper {
+		margin: 0 5px;
+	}
+}
+
+@media screen and (max-width: 775px) {
+	/**** ---Bloc Game row (GLOBAL)---  ****/
+	#gameRowDiv {
+		margin: 0;
+		height: 70%;
+	}
+	#gameRowDiv .player-wrapper {
+		height: 40%;
+		width: 60%;
+	}
+	#gameRowDiv .player-name,
+	#gameRowDiv .global span {
+		font-size: 95%;
+	}
+	#gameRowDiv img {
+		height: 80%;
+		width: 80%;
+	}
+	/**** ---Bloc Score row (ROUND)---  ****/
+	#scoreRowDiv .round-player h4 {
+		font-size: 85%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	i {
+		font-size: 0.94rem;
+	}
+	/**** ---Bloc Game row (GLOBAL)---  ****/
+	#gameRowDiv .player-name,
+	#gameRowDiv .global span {
+		font-size: 85%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	/**** ---Bloc Game row (GLOBAL)---  ****/
+	#gameRowDiv {
+		flex-direction: column;
+	}
+	/**** ---Bloc Score row (ROUND)---  ****/
+	#scoreRowDiv {
+		width: 50%;
+	}
+	#scoreRowDiv .round-player {
+		padding: 5px;
+	}
+	#scoreRowDiv .round-player h4 {
+		font-size: 75%;
+	}
 }

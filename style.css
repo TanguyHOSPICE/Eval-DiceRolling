@@ -124,7 +124,7 @@ img {
 /**** ---Bloc Score row (ROUND)---  ****/
 #scoreRowDiv {
 	height: 150px;
-	width: 80%;
+	width: 100%;
 	display: flex;
 	flex-shrink: 1;
 	justify-content: space-around;

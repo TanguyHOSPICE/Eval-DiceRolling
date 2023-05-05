@@ -35,7 +35,7 @@ const roll = () => {
 		// Générer un nombre aléatoire entre 1 et 6
 		let diceValue = Math.floor(Math.random() * 6) + 1;
 		// generer un url pour l'image du dé
-		let diceUrl = `/images/dice-0${diceValue}.svg`;
+		let diceUrl = `./images/dice-0${diceValue}.svg`;
 
 		// Changer l'image du dé
 		document.getElementById('face').setAttribute('src', diceUrl);

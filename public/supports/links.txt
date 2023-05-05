@@ -1,1 +1,3 @@
 Hosting URL: https://eval-dicerolling.web.app
+
+github: https://tanguyhospice.github.io/Eval-DiceRolling/
